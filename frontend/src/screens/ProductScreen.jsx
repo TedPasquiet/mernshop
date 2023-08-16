@@ -42,7 +42,7 @@ const ProductScreen = () => {
                 <ListGroup variant="flush">
                     <ListGroup.Item>
                         <Row>
-                            <Col>Status:</Col>
+                            <Col>Status: </Col>
                             <strong>${product.countInStock > 0 ? 'In Stock' : 'Out Of Stock' }</strong>
                         </Row>
                     </ListGroup.Item>
