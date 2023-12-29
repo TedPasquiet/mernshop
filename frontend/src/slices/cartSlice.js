@@ -36,10 +36,10 @@ const cartSlice = createSlice({
       state.shippingAddress = action.payload;
       return updateCart(state);
     },
-    // savePaymentMethod: (state, action) => {
-    //   state.paymentMethod = action.payload;
-    //   localStorage.setItem("cart", JSON.stringify(state));
-    // },
+    savePaymentMethod: (state, action) => {
+      state.paymentMethod = action.payload;
+      return updateCart(state);
+    },
     // clearCartItems: (state, action) => {
     //   state.cartItems = [];
     //   localStorage.setItem("cart", JSON.stringify(state));
