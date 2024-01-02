@@ -18,8 +18,8 @@ const PlaceOrderScreen = () => {
     <>
     <CheckoutSteps step1 step2 step3 step4/>
     <Row>
-        <Col md={8}></Col>
-        <Col md={4}></Col>
+        <Col md={8}>Column</Col>
+        <Col md={4}>Column</Col>
     </Row>
     </>
   )
