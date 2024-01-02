@@ -4,6 +4,7 @@
   "description": "eCommerce app Mern stack",
   "type": "module",
   "main": "server.js",
+  "proxy": "http://localhost:5000",
   "scripts": {
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
@@ -12,6 +13,7 @@
     "data:import": "node backend/seeder.js",
     "data:destroy": "node backend/seeder.js -d"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TedPasquiet/mernshop.git"
@@ -25,6 +27,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.4.2"
