@@ -6,14 +6,14 @@ import { useSelector } from 'react-redux';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
 import {PayPalButtons,usePayPalScriptReducer} from '@paypal/react-paypal-js'
-import { useGetProductsDetailsQuery,usePayOrderMutation,useGetPaypalClientIdQuery } from '../slices/productsApiSlice';
+import { useGetOrderDetailsQuery,usePayOrderMutation,useGetPayPalClientIdQuery } from '../slices/ordersApiSlice';
 
 const OrderScreen = () => {
     const {id: orderId} = useParams();
-    const {data:order,refetch, isLoading,error} = useGetProductsDetailsQuery(orderId);
+    const {data:order,refetch, isLoading,error} = useGetOrderDetailsQuery(orderId);
     const [payOrder,{isLoading:loadingPay}] = usePayOrderMutation();
     const [{isPending},paypalDispatch] = usePayPalScriptReducer();
-    const {data: paypal, isLoading : loadingPayPal, error: errorPayPal} = useGetPaypalClientIdQuery();
+    const {data: paypal, isLoading : loadingPayPal, error: errorPayPal} =useGetPayPalClientIdQuery();
     const {userInfo} = useSelector((state) => state.auth);
     useEffect(() =>{
         if(!errorPayPal && !loadingPayPal && paypal.clientId){
