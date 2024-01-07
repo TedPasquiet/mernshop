@@ -88,7 +88,7 @@ const getOrderById = asyncHandler(async (req, res) => {
 // @access  Private
 const updateOrderToPaid = asyncHandler(async (req, res) => {
   // NOTE: here we need to verify the payment was made to PayPal before marking
-  // the order as paid
+  // the orders as paid
   const { verified, value } = await verifyPayPalPayment(req.body.id);
   if (!verified) throw new Error("Payment not verified");
 
