@@ -92,7 +92,7 @@ const updateOrderToPaid = asyncHandler(async (req, res) => {
   const { verified, value } = await verifyPayPalPayment(req.body.id);
   if (!verified) throw new Error("Payment not verified");
 
-  // check if this transaction has been used before
+  // check if this transaction ha s been used before
   const isNewTransaction = await checkIfNewTransaction(Order, req.body.id);
   if (!isNewTransaction) throw new Error("Transaction has been used before");
 
